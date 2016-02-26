@@ -1,0 +1,29 @@
+{
+    "name": "weew/php-app-error-handler-monolog",
+    "description": "Integrates monolog/monolog logger into weew/php-app-error-handler.",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Maxim Kott",
+            "email": "maximkott@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "require": {
+        "monolog/monolog": "^1.17",
+        "weew/php-app-error-handler": "^1.2"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^4.7",
+        "satooshi/php-coveralls": "^0.6.1"
+    }
+}
