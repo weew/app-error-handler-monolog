@@ -3,7 +3,6 @@
 namespace Tests\Weew\App\ErrorHandler\Monolog;
 
 use PHPUnit_Framework_TestCase;
-use Psr\Log\LoggerInterface;
 use Psr\Log\LogLevel;
 use Weew\App\App;
 use Weew\App\ErrorHandler\ErrorHandlingProvider;
