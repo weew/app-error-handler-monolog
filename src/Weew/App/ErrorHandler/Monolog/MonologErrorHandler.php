@@ -30,7 +30,35 @@ class MonologErrorHandler {
         LoggerInterface $logger,
         IErrorHandler $errorHandler
     ) {
+        $this->setLogger($logger);
+        $this->setErrorHandler($errorHandler);
+    }
+
+    /**
+     * @return LoggerInterface
+     */
+    public function getLogger() {
+        return $this->logger;
+    }
+
+    /**
+     * @param LoggerInterface $logger
+     */
+    public function setLogger(LoggerInterface $logger) {
         $this->logger = $logger;
+    }
+
+    /**
+     * @return IErrorHandler
+     */
+    public function getErrorHandler() {
+        return $this->errorHandler;
+    }
+
+    /**
+     * @param IErrorHandler $errorHandler
+     */
+    public function setErrorHandler(IErrorHandler $errorHandler) {
         $this->errorHandler = $errorHandler;
     }
 

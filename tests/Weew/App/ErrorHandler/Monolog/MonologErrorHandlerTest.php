@@ -40,6 +40,24 @@ class MonologErrorHandlerTest extends PHPUnit_Framework_TestCase {
         return $logger;
     }
 
+    public function test_get_and_set_logger() {
+        $logger = $this->createLogger();
+        $errorHandler = new ErrorHandler();
+        $monologErrorHandler = new MonologErrorHandler(
+            $logger, $errorHandler
+        );
+        $this->assertTrue($logger === $monologErrorHandler->getLogger());
+    }
+
+    public function test_get_and_set_error_handler() {
+        $logger = $this->createLogger();
+        $errorHandler = new ErrorHandler();
+        $monologErrorHandler = new MonologErrorHandler(
+            $logger, $errorHandler
+        );
+        $this->assertTrue($errorHandler === $monologErrorHandler->getErrorHandler());
+    }
+
     public function test_enable_error_handling() {
         $errorHandler = new ErrorHandler();
         $monologErrorHandler = new MonologErrorHandler(

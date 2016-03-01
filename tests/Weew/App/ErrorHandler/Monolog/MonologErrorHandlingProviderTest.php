@@ -8,6 +8,7 @@ use Psr\Log\LogLevel;
 use Weew\App\App;
 use Weew\App\ErrorHandler\ErrorHandlingProvider;
 use Weew\App\ErrorHandler\Monolog\MonologConfig;
+use Weew\App\ErrorHandler\Monolog\MonologErrorHandler;
 use Weew\App\ErrorHandler\Monolog\MonologErrorHandlingProvider;
 
 class MonologErrorHandlingProviderTest extends PHPUnit_Framework_TestCase {
@@ -21,7 +22,7 @@ class MonologErrorHandlingProviderTest extends PHPUnit_Framework_TestCase {
         return $app;
     }
 
-    public function test_logger_is_shared_in_the_container() {
+    public function test_error_handler_is_shared_in_the_container() {
         $app = $this->createApp();
         $app->getKernel()->addProviders([
             ErrorHandlingProvider::class,
@@ -29,10 +30,7 @@ class MonologErrorHandlingProviderTest extends PHPUnit_Framework_TestCase {
         ]);
         $app->start();
 
-        $logger = $app->getContainer()->get(LoggerInterface::class);
-        $this->assertTrue($logger instanceof LoggerInterface);
-        $anotherLogger = $app->getContainer()->get(LoggerInterface::class);
-        $this->assertTrue($anotherLogger instanceof LoggerInterface);
-        $this->assertTrue($logger === $anotherLogger);
+        $logger = $app->getContainer()->get(MonologErrorHandler::class);
+        $this->assertTrue($logger instanceof MonologErrorHandler);
     }
 }

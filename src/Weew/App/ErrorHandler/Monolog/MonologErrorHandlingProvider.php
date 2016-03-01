@@ -4,7 +4,6 @@ namespace Weew\App\ErrorHandler\Monolog;
 
 use Monolog\Handler\StreamHandler;
 use Monolog\Logger;
-use Psr\Log\LoggerInterface;
 use Weew\Container\IContainer;
 use Weew\ErrorHandler\IErrorHandler;
 
@@ -27,7 +26,7 @@ class MonologErrorHandlingProvider {
         $monologErrorHandler->enableExceptionHandling();
 
         $container->set(
-            [Logger::class, LoggerInterface::class], $logger
+            [MonologErrorHandler::class], $monologErrorHandler
         );
     }
 
