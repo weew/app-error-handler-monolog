@@ -12,12 +12,19 @@ class MonologErrorHandlingProvider {
      * MonologErrorHandlingProvider constructor.
      *
      * @param IContainer $container
-     * @param MonologConfig $monologConfig
+     */
+    public function __construct(IContainer $container) {
+        $container->set(IMonologConfig::class, MonologConfig::class);
+    }
+
+    /**
+     * @param IContainer $container
+     * @param IMonologConfig $monologConfig
      * @param IErrorHandler $errorHandler
      */
-    public function __construct(
+    public function initialize(
         IContainer $container,
-        MonologConfig $monologConfig,
+        IMonologConfig $monologConfig,
         IErrorHandler $errorHandler
     ) {
         $logger = $this->createLogger($monologConfig);
