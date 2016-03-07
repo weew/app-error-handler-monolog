@@ -19,7 +19,7 @@
         }
     },
     "require": {
-        "monolog/monolog": "^1.17",
+        "weew/php-app-monolog": "^1.1",
         "weew/php-app-error-handler": "^1.2"
     },
     "require-dev": {

@@ -28,6 +28,7 @@ To enable this provider simply register it on the kernel.
 ```php
 $app->getKernel()->addProviders([
     ErrorHandlingProvider::class,
+    MonologProvider::class,
     MonologErrorHandlingProvider::class,
 ]);
 ```
@@ -37,8 +38,6 @@ $app->getKernel()->addProviders([
 This is how the config might look like in yaml:
 
 ```yaml
-monolog:
-    log_file_path: /path/to/log/file.txt
-    log_level: debug
-    logger_name: default
+monolog_error_handler:
+  channel_name: error
 ```
