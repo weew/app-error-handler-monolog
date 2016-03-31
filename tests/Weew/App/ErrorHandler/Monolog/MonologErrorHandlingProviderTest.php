@@ -14,10 +14,10 @@ use Weew\App\Monolog\MonologProvider;
 class MonologErrorHandlingProviderTest extends PHPUnit_Framework_TestCase {
     private function createApp() {
         $app = new App();
-        $config = $app->loadConfig();
+        $config = $app->getConfig();
         $config->set(MonologConfig::DEFAULT_CHANNEL_NAME, 'error');
-        $config->set(s(MonologConfig::LOG_CHANNEL_FILE_PATH, 'error'), path(__DIR__, 'error.txt'));
-        $config->set(s(MonologConfig::LOG_CHANNEL_LOG_LEVEL, 'error'), 'debug');
+        $config->set(MonologConfig::LOG_CHANNEL_FILE_PATH('error'), path(__DIR__, 'error.txt'));
+        $config->set(MonologConfig::LOG_CHANNEL_LOG_LEVEL('error'), 'debug');
         $config->set(MonologErrorHandlerConfig::ERROR_CHANNEL_NAME, 'error');
 
         return $app;
