@@ -2,15 +2,13 @@
 
 namespace Weew\App\ErrorHandler\Monolog;
 
-use Monolog\Handler\StreamHandler;
-use Monolog\Logger;
 use Weew\App\Monolog\IMonologChannelManager;
 use Weew\Container\IContainer;
 use Weew\ErrorHandler\IErrorHandler;
 
-class MonologErrorHandlingProvider {
+class MonologErrorHandlerProvider {
     /**
-     * MonologErrorHandlingProvider constructor.
+     * MonologErrorHandlerProvider constructor.
      *
      * @param IContainer $container
      */
@@ -36,7 +34,7 @@ class MonologErrorHandlingProvider {
         $monologErrorHandler->enableExceptionHandling();
 
         $container->set(
-            [MonologErrorHandler::class], $monologErrorHandler
+            MonologErrorHandler::class, $monologErrorHandler
         );
     }
 }

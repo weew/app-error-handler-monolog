@@ -29,7 +29,7 @@ To enable this provider simply register it on the kernel.
 $app->getKernel()->addProviders([
     ErrorHandlingProvider::class,
     MonologProvider::class,
-    MonologErrorHandlingProvider::class,
+    MonologErrorHandlerProvider::class,
 ]);
 ```
 

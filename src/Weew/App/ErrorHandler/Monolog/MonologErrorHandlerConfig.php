@@ -23,6 +23,9 @@ class MonologErrorHandlerConfig implements IMonologErrorHandlerConfig {
             ->ensure(self::ERROR_CHANNEL_NAME, 'Missing name of the error channel.');
     }
 
+    /**
+     * @return mixed
+     */
     public function getErrorChannelName() {
         return $this->config->get(self::ERROR_CHANNEL_NAME);
     }
