@@ -103,8 +103,6 @@ class MonologErrorHandler {
         ];
 
         $this->logger->log($logLevel, $message, $details);
-
-        return false;
     }
 
     /**
@@ -127,8 +125,6 @@ class MonologErrorHandler {
         ];
 
         $this->logger->log($logLevel, $message, $details);
-
-        return false;
     }
 
     /**
@@ -146,7 +142,5 @@ class MonologErrorHandler {
         );
 
         $this->logger->log(LogLevel::ERROR, $message, ['exception' => $ex]);
-
-        return false;
     }
 }
