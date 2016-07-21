@@ -1,6 +1,6 @@
 {
-    "name": "weew/php-app-error-handler-monolog",
-    "description": "Integrates monolog/monolog logger into weew/php-app-error-handler.",
+    "name": "weew/app-error-handler-monolog",
+    "description": "Integrates monolog/monolog logger into weew/app-error-handler.",
     "license": "MIT",
     "authors": [
         {
@@ -19,8 +19,8 @@
         }
     },
     "require": {
-        "weew/php-app-monolog": "^1.1",
-        "weew/php-app-error-handler": "^1.2"
+        "weew/app-monolog": "^1.1",
+        "weew/app-error-handler": "^1.2"
     },
     "require-dev": {
         "phpunit/phpunit": "^4.7",
